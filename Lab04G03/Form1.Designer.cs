@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.BtnSortBojaSpol = new System.Windows.Forms.Button();
             this.BtnSortSpol = new System.Windows.Forms.Button();
             this.BtnSortBoja = new System.Windows.Forms.Button();
             this.BtnDodajGovedo = new System.Windows.Forms.Button();
@@ -44,6 +45,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.BtnSortBojaSpol);
             this.groupBox1.Controls.Add(this.BtnSortSpol);
             this.groupBox1.Controls.Add(this.BtnSortBoja);
             this.groupBox1.Controls.Add(this.BtnDodajGovedo);
@@ -55,10 +57,20 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(13, 13);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(266, 165);
+            this.groupBox1.Size = new System.Drawing.Size(266, 224);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Dodavanje goveda";
+            // 
+            // BtnSortBojaSpol
+            // 
+            this.BtnSortBojaSpol.Location = new System.Drawing.Point(15, 165);
+            this.BtnSortBojaSpol.Name = "BtnSortBojaSpol";
+            this.BtnSortBojaSpol.Size = new System.Drawing.Size(237, 51);
+            this.BtnSortBojaSpol.TabIndex = 3;
+            this.BtnSortBojaSpol.Text = "Sortiraj po boji i spolu";
+            this.BtnSortBojaSpol.UseVisualStyleBackColor = true;
+            this.BtnSortBojaSpol.Click += new System.EventHandler(this.BtnSortBojaSpol_Click);
             // 
             // BtnSortSpol
             // 
@@ -151,16 +163,16 @@
             // ListaIspisaGoveda
             // 
             this.ListaIspisaGoveda.FormattingEnabled = true;
-            this.ListaIspisaGoveda.Location = new System.Drawing.Point(13, 179);
+            this.ListaIspisaGoveda.Location = new System.Drawing.Point(15, 240);
             this.ListaIspisaGoveda.Name = "ListaIspisaGoveda";
-            this.ListaIspisaGoveda.Size = new System.Drawing.Size(266, 264);
+            this.ListaIspisaGoveda.Size = new System.Drawing.Size(266, 303);
             this.ListaIspisaGoveda.TabIndex = 1;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(293, 454);
+            this.ClientSize = new System.Drawing.Size(293, 555);
             this.Controls.Add(this.ListaIspisaGoveda);
             this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
@@ -184,6 +196,7 @@
         private System.Windows.Forms.Button BtnSortBoja;
         private System.Windows.Forms.Button BtnDodajGovedo;
         private System.Windows.Forms.ListBox ListaIspisaGoveda;
+        private System.Windows.Forms.Button BtnSortBojaSpol;
     }
 }
 

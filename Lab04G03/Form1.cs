@@ -29,6 +29,8 @@ namespace Lab04G03
         private void ResetirajListu()
         {
             ListaIspisaGoveda.Items.Clear();
+            ListaIspisaGoveda.Items.Clear();
+            ListaIspisaGoveda.Items.Clear();
         }
         private void BtnSortBoja_Click(object sender, EventArgs e)
         {
@@ -48,6 +50,18 @@ namespace Lab04G03
             string unosGoveda = "";
             List<Govedo> sortiranaGovedaPoSpolu = Govedo.SvaGoveda.OrderBy(entinet => entinet.SpolGoveda).ToList();
             foreach (var govedo in sortiranaGovedaPoSpolu)
+            {
+                unosGoveda = govedo.NazivGoveda + " - " + govedo.SpolGoveda + " - " + govedo.BojaGoveda;
+                ListaIspisaGoveda.Items.Add(unosGoveda);
+            }
+        }
+
+        private void BtnSortBojaSpol_Click(object sender, EventArgs e)
+        {
+            ResetirajListu();
+            string unosGoveda = "";
+            List<Govedo> sortiranaGovedaPoBojiSpolu = Govedo.SvaGoveda.OrderBy(entitet => entitet.BojaGoveda).ThenBy(spol => spol.SpolGoveda).ToList();
+            foreach (var govedo in sortiranaGovedaPoBojiSpolu)
             {
                 unosGoveda = govedo.NazivGoveda + " - " + govedo.SpolGoveda + " - " + govedo.BojaGoveda;
                 ListaIspisaGoveda.Items.Add(unosGoveda);
