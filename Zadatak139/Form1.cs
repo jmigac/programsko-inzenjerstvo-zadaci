@@ -16,5 +16,10 @@ namespace Zadatak139
         {
             InitializeComponent();
         }
+
+        private void TimerBoje_Tick(object sender, EventArgs e)
+        {
+            BackColor = Color.FromArgb(255,TBarCrvena.Value, TBarZelena.Value, TBarPlava.Value);
+        }
     }
 }
