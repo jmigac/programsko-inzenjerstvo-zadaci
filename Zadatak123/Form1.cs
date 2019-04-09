@@ -17,6 +17,7 @@ namespace Zadatak123
         public static int MiliSekunda;
         public static bool AktivnoBrojanjeVremena;
         public static int PotrebnoVrijemeUcitavanja;
+        public static List<Uri> PovijestWebStranica = new List<Uri>();
         public Form1()
         {
             InitializeComponent();
@@ -70,9 +71,32 @@ namespace Zadatak123
             PotrebnoVrijemeUcitavanja = MiliSekunda + (Sekunda * 1000) + (Minuta * 60 * 1000);
             string upisPovijest = "";
             upisPovijest += TxtLink.Text + " - " + PotrebnoVrijemeUcitavanja + "ms";
-            if(WebBrowser.Url.ToString().Length>0)
+            if (WebBrowser.Url.ToString().Length > 0)
+            {
                 ListaPovijestPretrazivanja.Items.Add(upisPovijest);
+                PovijestWebStranica.Add(WebBrowser.Url);
+            }
             ResetirajVrijeme();
+        }
+
+        private void BtnNazad_Click(object sender, EventArgs e)
+        {
+            if (PovijestWebStranica.Count >= 2)
+            {
+                Uri trenutnaStranica = WebBrowser.Url;
+                for (int i = 0; i < PovijestWebStranica.Count; i++)
+                {
+                    if (PovijestWebStranica[i].Equals(trenutnaStranica))
+                        WebBrowser.Url = PovijestWebStranica[i - 1];
+                }
+            }
+
+        }
+
+        private void BtnOsvjezi_Click(object sender, EventArgs e)
+        {
+            Uri noviLink = new Uri(TxtLink.Text);
+            WebBrowser.Url = noviLink;
         }
     }
 }
