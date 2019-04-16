@@ -28,13 +28,46 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.LstDijagnostika = new System.Windows.Forms.ListBox();
+            this.BtnZapocniDijagnostiku = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // LstDijagnostika
+            // 
+            this.LstDijagnostika.FormattingEnabled = true;
+            this.LstDijagnostika.Location = new System.Drawing.Point(13, 13);
+            this.LstDijagnostika.Name = "LstDijagnostika";
+            this.LstDijagnostika.Size = new System.Drawing.Size(236, 238);
+            this.LstDijagnostika.TabIndex = 0;
+            // 
+            // BtnZapocniDijagnostiku
+            // 
+            this.BtnZapocniDijagnostiku.Location = new System.Drawing.Point(13, 258);
+            this.BtnZapocniDijagnostiku.Name = "BtnZapocniDijagnostiku";
+            this.BtnZapocniDijagnostiku.Size = new System.Drawing.Size(236, 23);
+            this.BtnZapocniDijagnostiku.TabIndex = 1;
+            this.BtnZapocniDijagnostiku.Text = "Zapocni dijagnostiku";
+            this.BtnZapocniDijagnostiku.UseVisualStyleBackColor = true;
+            this.BtnZapocniDijagnostiku.Click += new System.EventHandler(this.BtnZapocniDijagnostiku_Click);
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(272, 291);
+            this.Controls.Add(this.BtnZapocniDijagnostiku);
+            this.Controls.Add(this.LstDijagnostika);
+            this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.ListBox LstDijagnostika;
+        private System.Windows.Forms.Button BtnZapocniDijagnostiku;
     }
 }
 
