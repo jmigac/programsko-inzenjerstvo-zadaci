@@ -39,10 +39,22 @@ namespace Lab5G6
         public void ZapocniDijagnostiku()
         {
             LstDijagnostika.Items.Clear();
+            string letjelicaIspis = "";
             foreach (var letjelica in SveLetjelice)
             {
-                letjelica.Samodijagnostika();
-                LstDijagnostika.Items.Add(letjelica.ToString());
+                if (letjelica.Samodijagnostika())
+                {
+                    letjelicaIspis = String.Format($"{letjelica.Naziv} -> Dijagnostika je uredna");
+                    LstDijagnostika.Items.Add(letjelicaIspis);
+                    letjelicaIspis = "";
+                }
+                else
+                {
+                    letjelicaIspis = String.Format($"{letjelica.Naziv} -> Dijagnostika nije uredna");
+                    LstDijagnostika.Items.Add(letjelicaIspis);
+                    letjelicaIspis = "";
+                }
+                
             }
         }
         private void BtnZapocniDijagnostiku_Click(object sender, EventArgs e)

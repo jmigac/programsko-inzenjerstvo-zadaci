@@ -21,15 +21,10 @@ namespace Lab5G6
             broj = randomBroj.Next(1, 1000);
             if (broj % 6 == 0 || broj % 6 == 1)
             {
-                Rezultat = "Dijagnostika nije uredna!";
                 return false;
             }
-            Rezultat = "Dijagnostika je uredna!";
             return true;
         }
-        public override string ToString()
-        {
-            return this.Naziv+" -> "+this.Rezultat;
-        }
+
     }
 }

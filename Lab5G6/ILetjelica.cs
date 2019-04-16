@@ -9,7 +9,6 @@ namespace Lab5G6
     public interface ILetjelica
     {
         string Naziv { get; set; }
-        string Rezultat { get; set; }
         bool Samodijagnostika();
     }
 }
